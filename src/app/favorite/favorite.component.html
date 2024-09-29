@@ -1,0 +1,20 @@
+<div class="favorite-container" *ngIf="isFavorite && favoriteData.length !== 0">
+  <span class="favorite-header">
+    <h1>Favorite List</h1>
+    <p (click)="handleCloseFavorite()">Close</p>
+  </span>
+  <div class="favorite" *ngFor="let favorite of favoriteData">
+    <div
+      [ngClass]="
+        id === favorite.id ? 'favorite-content-active' : 'favorite-content'
+      "
+      (click)="handleviewFavorite(favorite.id)"
+    >
+      <h2>
+        {{ favorite.name }}, {{ favorite.state }}
+        {{ favorite.country === "NG" ? "Nigeria" : favorite.country }}
+      </h2>
+      <h3>{{ favorite.temp | number : "1.0-0" }} °C</h3>
+    </div>
+  </div>
+</div>

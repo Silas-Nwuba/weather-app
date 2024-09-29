@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .container {
+    display: block !important;
+    margin-top: 10rem;
+    margin-bottom: 10px;
+  }
+}
