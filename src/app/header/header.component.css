@@ -67,7 +67,7 @@ header .favorite {
   cursor: pointer;
 }
 .count {
-  background-color: #dfdb05;
+  background-color: #3272e9e8;
   color: var(--color-text);
   border-radius: 50%;
   width: 22px;

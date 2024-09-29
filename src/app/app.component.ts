@@ -98,6 +98,7 @@ export class AppComponent implements OnInit {
       next: (data: any) => {
         this.weatherService.getGeoCode(data?.name).subscribe((dataObj: any) => {
           this.loading = false;
+          this.isCurrentWeather = true;
           this.updateInputValue = '';
           dataObj.map((item: any) => {
             this.weather.name = item.name;
