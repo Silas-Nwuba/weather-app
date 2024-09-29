@@ -16,7 +16,7 @@ export class WeatherService {
     return this.http.get<weatherData>(url);
   }
   getGeoCode(city: string): Observable<any> {
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${this.geoCode_Api}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${this.geoCode_Api}`;
     return this.http.get(url);
   }
   getweatherbycity(city: string) {
