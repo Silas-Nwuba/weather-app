@@ -73,6 +73,15 @@ h3 {
   font-weight: 400;
   color: white;
 }
+button {
+  background-color: var(--color-red-dark);
+  color: white;
+  padding: 10px 15px;
+  font-size: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
 @media (max-width: 768px) {
   .favorite-container {
     width: 90%;

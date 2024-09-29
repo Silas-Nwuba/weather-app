@@ -10,7 +10,7 @@
   <app-error-message [message]="errMessage" />
   <div class="container">
     <app-current-weather
-      *ngIf="loading === false && !errMessage"
+      *ngIf="loading === false && !errMessage && isCurrentWeather"
       [weather]="weather"
       [isLoading]="loading"
       (handleFavoriteData)="handleFavoriteData($event)"
@@ -22,6 +22,7 @@
       (closeFavorite)="handleCloseFavoriteModal()"
       [favoriteData]="favoriteData"
       (onFavorite)="onFavorite($event)"
+      (handleDeleteFavorite)="handleDeleteFavorite()"
     />
   </div>
 </div>

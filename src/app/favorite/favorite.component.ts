@@ -11,6 +11,7 @@ export class FavoriteComponent {
   @Input() favoriteData: favoriteType[] = [];
   @Output() closeFavorite = new EventEmitter<void>();
   @Output() onFavorite = new EventEmitter<string>();
+  @Output() handleDeleteFavorite = new EventEmitter<void>();
   id: string = '';
   handleCloseFavorite() {
     this.closeFavorite.emit();
@@ -20,5 +21,8 @@ export class FavoriteComponent {
     this.onFavorite.emit(id);
     this.closeFavorite.emit();
     console.log(this.id);
+  }
+  handleDeleteFavoriteBtn() {
+    this.handleDeleteFavorite.emit();
   }
 }

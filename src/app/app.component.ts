@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   favoriteData: favoriteType[] = [];
   count: number = 0;
   errMessage: string = '';
+  isCurrentWeather = false;
 
   private iconMapping: { [key: string]: string } = {
     '01d': '../../../assets/image/sunny-night.png',
@@ -53,6 +54,7 @@ export class AppComponent implements OnInit {
                 this.weather = value;
                 this.getWeatherData(this.weather);
                 this.loading = false;
+                this.isCurrentWeather = true;
               },
               error: (err) => {
                 this.errMessage = 'Error getting weather data';
@@ -96,6 +98,7 @@ export class AppComponent implements OnInit {
       next: (data: any) => {
         this.weatherService.getGeoCode(data?.name).subscribe((dataObj: any) => {
           this.loading = false;
+          this.updateInputValue = '';
           dataObj.map((item: any) => {
             this.weather.name = item.name;
             this.weather.state = item.state;
@@ -119,6 +122,7 @@ export class AppComponent implements OnInit {
         this.isFavorite = false;
         this.errMessage = 'Error getting weather data';
         this.loading = false;
+        this.updateInputValue = '';
       },
     });
   }
@@ -129,6 +133,7 @@ export class AppComponent implements OnInit {
       next: (data: any) => {
         this.weatherService.getGeoCode(data?.name).subscribe((dataObj: any) => {
           this.loading = false;
+          this.isCurrentWeather = true;
           dataObj.map((item: any) => {
             this.weather.name = item.name;
             this.weather.state = item.state;
@@ -175,10 +180,22 @@ export class AppComponent implements OnInit {
     this.count = this.favoriteData.length;
   }
   handleOpenFavoriteModal() {
-    this.isFavorite = true;
+    if (this.isDestop) {
+      this.isCurrentWeather = true;
+      this.isFavorite = true;
+    } else if (!this.isDestop && this.count !== 0) {
+      this.isCurrentWeather = false;
+      this.isFavorite = true;
+    }
   }
   handleCloseFavoriteModal() {
     this.isFavorite = false;
+    this.isCurrentWeather = true;
+  }
+  handleDeleteFavorite() {
+    this.favoriteData = [];
+    this.count = 0;
+    this.getLocation();
   }
   ngOnInit() {
     this.getLocation();
