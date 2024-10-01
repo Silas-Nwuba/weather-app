@@ -12,7 +12,7 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   getWeather(latitude: number, longitude: number) {
-    const url = `${this.apiUrl}?lat=${latitude}&lon=${longitude}&appid=${this.Api_Key}&units=metric&limit={1}`;
+    const url = `${this.apiUrl}?lat=${latitude}&lon=${longitude}&appid=${this.Api_Key}&units=metric`;
     return this.http.get<weatherData>(url);
   }
   getGeoCode(city: string): Observable<any> {

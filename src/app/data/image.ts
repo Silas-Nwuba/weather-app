@@ -1,0 +1,18 @@
+export const iconMapping: { [key: string]: string } = {
+  '01d': '../../../assets/image/sunny-night.png',
+  '01n': '../../../assets/image/sunny.png',
+  '02d': '../../../assets/image/partly-cloudy.png',
+  '02n': '../../../assets/image/partly-cloudy-night.png',
+  '03d': '../../../assets/image/partly-cloudy.png',
+  '03n': '../../../assets/image/partly-cloudy.png',
+  '04d': '../../../assets/image/drizzle.png',
+  '04n': '../../../assets/image/drizzle.png',
+  '09d': '../../../assets/weather/shower-rain.png',
+  '09n': '../../../assets/weather/shower-rain.png',
+  '10d': '../../../assets/image/rainy-day.png',
+  '10n': '../../../assets/image/rainy-night.png',
+  '11d': '../../../assets/image/thunderstorm.png',
+  '13d': '../../../assets/image/snow.png',
+  '13n': '../../../assets/image/snow.png',
+  '50d': '../../../assets/image/soft.png',
+};

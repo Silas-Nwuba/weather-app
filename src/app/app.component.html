@@ -1,4 +1,4 @@
-<div>
+<div class="layout">
   <app-header
     [inputValue]="updateInputValue"
     (inputValueChange)="updateInputSearchValue($event)"
@@ -6,8 +6,13 @@
     (onEnterKey)="onEnterKey()"
     [count]="count"
   ></app-header>
+  <app-cities
+    *ngIf="isCityOpen"
+    (handleCity)="handleCity($event)"
+    (getLocation)="getLocation($event.latitude, $event.longitude)"
+  />
   <app-loader *ngIf="loading" />
-  <app-error-message [message]="errMessage" />
+  <!-- <app-error-message [message]="errMessage" /> -->
   <div class="container">
     <app-current-weather
       *ngIf="loading === false && !errMessage && isCurrentWeather"
@@ -21,7 +26,7 @@
       [isFavorite]="isFavorite"
       (closeFavorite)="handleCloseFavoriteModal()"
       [favoriteData]="favoriteData"
-      (onFavorite)="onFavorite($event)"
+      (onFavorite)="handleWeatherByCityName($event)"
       (handleDeleteFavorite)="handleDeleteFavorite()"
     />
   </div>

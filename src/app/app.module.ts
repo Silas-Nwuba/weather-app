@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from './loader/loader.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorMessageComponent } from './error-message/error-message.component';
+import { CitiesComponent } from './cities/cities.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
     FooterComponent,
     LoaderComponent,
     ErrorMessageComponent,
+    CitiesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

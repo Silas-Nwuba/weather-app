@@ -14,7 +14,6 @@ export class CurrentWeatherComponent {
   @Output() handleUpdateFavorite: EventEmitter<string> = new EventEmitter();
 
   handleFavoriteChecked(weather: any) {
-    console.log(weather);
     this.isFavouriteChecked = !this.isFavouriteChecked;
     if (this.isFavouriteChecked) {
       const newFavorite = {

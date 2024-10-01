@@ -5,8 +5,20 @@
       <div>
         <h1>Current Weather</h1>
         <h2>
-          {{ weather.name }} , {{ weather.state === "" ? "" : weather.state }},
-          {{ weather.country === "NG" ? "Nigeria" : weather.country }}
+          {{ weather.name }}
+          {{
+            weather.country === "NG"
+              ? "Nigeria"
+              : weather.country === "US"
+              ? "USA"
+              : weather.country === "JP"
+              ? "Japan"
+              : weather.country === "GH"
+              ? "Ghana"
+              : weather.country === "GB"
+              ? "Uk"
+              : weather.country
+          }}
         </h2>
       </div>
       <ng-container
@@ -51,7 +63,15 @@
 
     <div class="current-info">
       <div class="weather-status">
-        <img src="{{ weather.imageUrl }}" alt="cloud" />
+        <img
+          *ngIf="weather.imageUrl !== undefined; else defaultImage"
+          [src]="weather.imageUrl"
+          alt="{{ weather.desc }}"
+        />
+        <ng-template #defaultImage>
+          <img src="../../../assets/image/sunny.png" alt="" />
+        </ng-template>
+
         <div class="degree">
           <h2>{{ weather.temp | number : "1.0-0" }}</h2>
           <span>°C</span>

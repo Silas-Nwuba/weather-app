@@ -2,9 +2,8 @@
   display: flex;
   gap: 2.4rem;
   justify-content: center;
+  margin-top: 40px;
   width: 100%;
-  margin-bottom: 10px;
-  height: 100%;
 }
 @media (max-width: 768px) {
   .container {
