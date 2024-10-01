@@ -25,8 +25,9 @@
 }
 .cities-header h1 {
   font-size: 20px;
-  color: #eeee;
+  color: #dfdedeee;
   font-weight: 500;
+  margin-left: 10px;
 }
 .location {
   background-color: var(--color-background-100);
@@ -48,13 +49,13 @@
 
 .city-content {
   background-color: var(--color-background-100);
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 
 .city-content h1 {
@@ -69,6 +70,10 @@
 }
 @media (max-width: 768px) {
   .cities {
-    width: 80%;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .cities-header h1 {
+    font-size: 16px;
   }
 }
